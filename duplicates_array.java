@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class duplicates_array {
     public static int RemoveDuplicatesInArray(int arr[]){
         int j = 0;
