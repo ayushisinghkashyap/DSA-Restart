@@ -17,7 +17,7 @@ public class rightRotate_Dplace {
             System.out.print(tarr[i]+ " ");
         }
     }
-
+// Still Working on it ....
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5,6,7};
         int d = 2 ;
