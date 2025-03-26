@@ -1,13 +1,17 @@
 public class subarrays {
     public static void print_Subarrays(int arr[]){
         for(int i = 0;i<arr.length;i++){
-            for(int j=0;j<=i;j++){
-                System.out.print(arr[j] + "");
+            int start = i;
+            for(int j=i;j<arr.length;j++){
+                int end = j;
+                for(int k=start;k<=end;k++){
+                    System.out.print(arr[k] +" " );
+                }
+                System.out.println();
             }
             System.out.println();
         }
     }
-    //not done yet
 
     public static void main(String[] args) {
         int arr[] = {2,4,6,8,10};
