@@ -11,8 +11,7 @@ public class fibonacci {
             f3=f1+f2;
             System.out.println(f3);
             f1=f2;
-            f2=f3;
-            
+            f2=f3; 
         }
     }
 }
