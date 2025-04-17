@@ -7,7 +7,6 @@ public class countnum {
                     count++;
                 }
             }
-            
         }
         System.out.println(num+" appears "+count+" times");
     }
