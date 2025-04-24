@@ -46,5 +46,6 @@ public class kadanes_algo {
         }
 
         System.out.println(maxSubarraySum(arr, n));
+        sc.close();
     }
 }
