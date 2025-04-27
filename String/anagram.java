@@ -1,52 +1,39 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class anagram {
-    public static boolean checkAnagram(String s, String t){
 
-        boolean count = false;
-        if(s.length() == t.length()){
-            for (int i = 0; i < s.length(); i++) {
-                for (int j = 0; j < t.length(); j++) {
-                    if(s.charAt(i) == t.charAt(j)){
-                        count = true;
-                        break;
-                    }
-                    else{
-                        count = false;
-                    }
-                }
-                if(count == false){
-                    break;
-                }
-            }
+    public static boolean anagramStrings(String s, String t){
+        char[] scharArray = s.toCharArray();
+        Arrays.sort(scharArray);
+        char[] tcharArray = t.toCharArray();
+        Arrays.sort(tcharArray);
 
-            boolean count1 = false;
-            for (int i = 0; i < t.length(); i++) {
-                for (int j = 0; j < s.length(); j++) {
-                    if(t.charAt(i) == s.charAt(j)){
-                        count1 = true;
-                        break;
-                    }
-                    else{
-                        count1 = false;
-                    }
-                }
-                if(count1 == false){
-                    break;
-                }
-            }
-
-            count = count && count1;
-            return count;
+        if(s.length() != t.length()){
+            return false;
         }
-        
+
         else{
+            boolean count = true;
+            for(int i = 0;i<scharArray.length;i++){
+                if(scharArray[i] != tcharArray[i]){
+                    count = false;
+                    break;
+                }
+            }
             return count;
         }
     }
 
     public static void main(String[] args) {
         // String s = "anagram", t = "nagaram";    
-        String s="aa" , t = "a"   ;
-        System.out.println(checkAnagram(s, t));
+        // String s = "aa" , t = "a"   ;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Strings: ");
+        String s = sc.nextLine();
+        String t = sc.nextLine();
+        System.out.println(anagramStrings(s, t));
     }
 
 }
