@@ -10,7 +10,7 @@ public class bruteForce_Maxsum {
                     System.out.print(arr[k]+" ");  // print SubArrays
                     currsum = arr[k]+currsum;   // Calculating Sum of sub Arrays 
                 }
-                if(maxsum<currsum){
+                if(maxsum<currsum){   //
                     maxsum=currsum; // assigning maximum sum to the MaxSum
                 }
                 System.out.print("  sum: "+currsum);   // print a subarray Sum
