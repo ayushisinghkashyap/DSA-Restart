@@ -12,17 +12,15 @@ public class minPossitiveMissingValue {
                     if(temp != arr[i+1]){
                         poss = Math.min(poss,temp);
                     }
-                    poss = Math.min(poss,temp);
                 }
-                poss = Math.min(poss,temp);
             }
         }
         return poss;
     }
     public static void main(String[] args) {
-       // int arr[] = {2, -3, 4, 1, 1, 7};
+        int arr[] = {2, -3, 4, 1, 1, 7};
        // int arr[] = {5, 3, 2, 5, 1};
-       int arr[] = {-8, 0, -1, -4, -3};
+       // int arr[] = {-8, 0, -1, -4, -3};  // not working for this case
        
        System.out.println(missingNumber(arr));
     }
