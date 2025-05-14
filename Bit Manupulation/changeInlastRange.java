@@ -1,4 +1,4 @@
-public class changeInRange {
+public class changeInlastRange {
     public static int clearinRange(int n ,int i){
         int bitmask = -1;
         bitmask = bitmask << i;
