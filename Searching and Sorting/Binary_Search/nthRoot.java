@@ -3,35 +3,36 @@ package Binary_Search;
 import java.util.Scanner;
 
 public class nthRoot {
-    public static int root(int N,int num){
-        int r = 1;
-        if(N == 1){
-            return num;
+    public static int root(int n,int m){
+        int r = -1;
+        if(n == 1){
+            return m;
         }
         else{
-            while(r < num){
-                int n = N;
-                int M = num;
-                while(n>0){
-                    M = M/r;
-                    n--;
-                    if(M < 1){
-                        r = -1;
-                        break;
-                    }
-                }
-                if(M == 1){
+            int start = 1;
+            int end = m;
+            while(start <= end){
+                int mid = (start +end) /2;
+                if(func(n,m,mid) == 1){
+                    r = mid;
                     break;
                 }
-                else if(r == -1){
-                    break;
+                else if(func(n, m, mid) == 0){
+                    end = mid-1;
                 }
-    
-                r++;
+                else if(func(n,m,mid) >= 2){
+                    start = mid+1;
+                }
             }
-
-            return r;
         }
+        return r;
+    }
+    public static int func(int n,int m ,int mid){
+        while(n>0){
+            m = m/mid;
+            n--;
+        }
+        return m;
     }
 
     public static void main(String[] args) {
@@ -40,6 +41,10 @@ public class nthRoot {
         int n = sc.nextInt();
         System.out.print("Enter num: ");
         int num = sc.nextInt();
+
+        // int n = 3;
+        // int num = 25;
+
         System.out.println(root(n, num));
     }
 }
