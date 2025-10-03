@@ -46,5 +46,7 @@ public class fibonacci {
         System.out.println();
         System.out.print("Naive Approach : ");
         Naive_approach(n);
+
+        sc.close();
     }
 }
