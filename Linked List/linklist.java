@@ -16,9 +16,9 @@ public class linklist {
            this.val = val;
         }
 
-        public Node(int val, Node node){
+        public Node(int val, Node next){
             this.val = val;
-            this.next = node;
+            this.next = next;
         }
     }
 
@@ -46,7 +46,7 @@ public class linklist {
     public int sizeLL(){
         Node temp = head;
         while(temp == null){
-            this.size++;
+            this.size += 1;
             temp = temp.next;
         }
 
@@ -57,12 +57,14 @@ public class linklist {
 
         if(tail == null){
             insertFirst(val);
-            size +=1;
         }
-        Node node = new Node(val);
-        tail.next = node;
-        tail = node;
-        size+=1;
+        else{
+            Node node = new Node(val);
+            tail.next = node;
+            tail = node;
+            size+=1;
+        }
+        
     }
 
     public void insertIndex(int val, int i){
@@ -78,8 +80,9 @@ public class linklist {
     }
 
     public void deleteFirst(){
+        System.out.println(head.val);
         head = head.next;
-        size--;
+        size -=1;
     }
 
     public void deletelast(){
@@ -91,16 +94,30 @@ public class linklist {
         tail = temp;
         tail.next = null;
         
-        size--;
+        size-=1;
     }
 
     public Node get(int index){
         Node temp = head;
-        for(int i=1;i<index;i++){
+        for(int i=0;i<index;i++){
             temp = temp.next;
         }
 
         return temp;
     }
+
+    // public int delete(int index){
+    //     if(index==0){
+    //         deleteFirst();
+    //     }
+    //     else if(index == size-1){
+    //         deletelast();
+    //     }
+    //     Node prev = get(index-1);
+    //     int value = prev.next.val;
+
+    //     return value;
+
+    // }
 
 }
